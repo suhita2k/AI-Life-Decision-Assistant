@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Life Decision Assistant - OpenEnv</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>🧠 AI Life Decision Assistant</h1>
+            <p class="subtitle">OpenEnv Reinforcement Learning Environment</p>
+        </header>
+
+        <!-- Task Selection -->
+        <section class="task-selection">
+            <h2>Select Decision Task</h2>
+            <div class="task-buttons">
+                <button class="task-btn" data-task="easy">
+                    📚 Easy<br><span class="task-desc">Programming Language</span>
+                </button>
+                <button class="task-btn" data-task="medium">
+                    💼 Medium<br><span class="task-desc">Job Offers</span>
+                </button>
+                <button class="task-btn" data-task="hard">
+                    🎓 Hard<br><span class="task-desc">Career Path</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Environment State -->
+        <section class="environment-state">
+            <h2>Environment State</h2>
+            <div class="state-card">
+                <div class="state-item">
+                    <strong>Situation:</strong>
+                    <p id="situation">Not initialized. Select a task above.</p>
+                </div>
+                <div class="state-item">
+                    <strong>Goal:</strong>
+                    <p id="goal">-</p>
+                </div>
+                <div class="state-item">
+                    <strong>Progress:</strong>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                        <span class="progress-text" id="progress-text">0%</span>
+                    </div>
+                </div>
+                <div class="state-item">
+                    <strong>Total Reward:</strong>
+                    <span id="total-reward" class="reward-value">0.00</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Space -->
+        <section class="action-space">
+            <h2>Available Actions</h2>
+            <div class="action-buttons">
+                <button class="action-btn" data-action="analyze_problem">
+                    🔍 Analyze Problem
+                </button>
+                <button class="action-btn" data-action="identify_factors">
+                    📋 Identify Factors
+                </button>
+                <button class="action-btn" data-action="generate_options">
+                    💡 Generate Options
+                </button>
+                <button class="action-btn" data-action="evaluate_options">
+                    ⚖️ Evaluate Options
+                </button>
+                <button class="action-btn" data-action="recommend_decision">
+                    ✅ Recommend Decision
+                </button>
+            </div>
+        </section>
+
+        <!-- History -->
+        <section class="history-section">
+            <h2>Action History</h2>
+            <div id="history-container" class="history-container">
+                <p class="empty-message">No actions taken yet.</p>
+            </div>
+        </section>
+
+        <!-- Step Info -->
+        <section class="step-info">
+            <h2>Latest Step Info</h2>
+            <div id="step-info" class="info-card">
+                <p class="empty-message">Take an action to see results.</p>
+            </div>
+        </section>
+
+        <!-- Baseline Runner -->
+        <section class="baseline-section">
+            <h2>Run Baseline Agent</h2>
+            <div class="baseline-controls">
+                <button class="baseline-btn" data-task="easy">Run Easy Task</button>
+                <button class="baseline-btn" data-task="medium">Run Medium Task</button>
+                <button class="baseline-btn" data-task="hard">Run Hard Task</button>
+            </div>
+            <div id="baseline-results" class="baseline-results"></div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Powered by OpenEnv | Reinforcement Learning Environment</p>
+            <div class="api-status">
+                <span id="api-status">● API Ready</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

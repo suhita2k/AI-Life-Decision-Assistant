@@ -1,0 +1,32 @@
+name: life-decision-openenv
+version: 2.0.0
+description: Reinforcement Learning Environment for Life Decision Making
+
+environment:
+  type: decision-making
+  domain: life-choices
+  difficulty_levels:
+    - easy
+    - medium
+    - hard
+
+observation_space:
+  type: dict
+  fields:
+    situation:
+      type: string
+      description: Description of the decision scenario
+    goal:
+      type: string
+      description: Desired outcome or objective
+    progress:
+      type: float
+      range: [0.0, 1.0]
+      description: Completion progress
+    history:
+      type: list
+      description: List of actions taken
+      item_type: string
+
+action_space:
+  

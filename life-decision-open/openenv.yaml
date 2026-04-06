@@ -5,10 +5,6 @@ description: Reinforcement Learning Environment for Life Decision Making
 environment:
   type: decision-making
   domain: life-choices
-  difficulty_levels:
-    - easy
-    - medium
-    - hard
 
 observation_space:
   type: dict
@@ -26,7 +22,60 @@ observation_space:
     history:
       type: list
       description: List of actions taken
-      item_type: string
 
 action_space:
-  
+  type: discrete
+  actions:
+    - analyze_problem
+    - identify_factors
+    - generate_options
+    - evaluate_options
+    - recommend_decision
+
+reward:
+  type: step-based
+  range: [-0.1, 0.2]
+  cumulative_range: [0.0, 1.0]
+  structure:
+    analyze_problem: 0.2
+    identify_factors: 0.2
+    generate_options: 0.2
+    evaluate_options: 0.2
+    recommend_decision: 0.2
+    invalid_action: -0.1
+
+tasks:
+  easy:
+    name: Programming Language Selection
+    description: Choosing which programming language to learn
+    difficulty: 1
+  medium:
+    name: Job Offer Selection
+    description: Choosing between two job offers
+    difficulty: 2
+  hard:
+    name: Higher Studies vs Career Switch
+    description: Choosing between higher studies and switching careers
+    difficulty: 3
+
+grading:
+  deterministic: true
+  score_range: [0.0, 1.0]
+
+api:
+  framework: FastAPI
+  entrypoint: inference.py
+  endpoints:
+    - POST /reset
+    - POST /step
+    - GET /state
+    - POST /baseline
+    - GET /health
+
+metadata:
+  license: MIT
+  tags:
+    - reinforcement-learning
+    - decision-making
+    - openenv
+    - llm

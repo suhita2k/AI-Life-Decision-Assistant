@@ -1,0 +1,15 @@
+[project]
+name = "ai-life-decision-assistant"
+version = "0.1.0"
+description = "AI powered decision assistant for rural youth"
+authors = [{name = "Suhi Dharma"}]
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+    "requests"
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"

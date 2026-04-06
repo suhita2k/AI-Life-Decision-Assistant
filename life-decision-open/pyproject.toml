@@ -1,15 +1,21 @@
 [project]
 name = "ai-life-decision-assistant"
 version = "0.1.0"
-description = "AI powered decision assistant for rural youth"
-authors = [{name = "Suhi Dharma"}]
+description = "AI Life Decision Assistant for Open Environment Hackathon"
+readme = "README.md"
+requires-python = ">=3.10"
+
 dependencies = [
     "fastapi",
     "uvicorn",
-    "pydantic",
+    "openenv-core>=0.2.0",
+    "python-dotenv",
     "requests"
 ]
 
+[project.scripts]
+server = "server:app"
+
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools"]
 build-backend = "setuptools.build_meta"

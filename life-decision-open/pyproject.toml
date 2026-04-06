@@ -1,21 +1,33 @@
-[project]
-name = "ai-life-decision-assistant"
-version = "0.1.0"
-description = "AI Life Decision Assistant for Open Environment Hackathon"
-readme = "README.md"
-requires-python = ">=3.10"
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
 
+[project]
+name = "life-decision-openenv"
+version = "2.0.0"
+description = "AI Life Decision Assistant - OpenEnv Reinforcement Learning Environment"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+authors = [
+    {name = "OpenEnv Team"}
+]
+keywords = [
+    "reinforcement-learning",
+    "decision-making",
+    "openenv",
+    "llm",
+    "fastapi"
+]
 dependencies = [
-    "fastapi",
-    "uvicorn",
-    "openenv-core>=0.2.0",
-    "python-dotenv",
-    "requests"
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "pydantic>=2.5.0",
+    "openai>=1.3.0",
+    "python-dotenv>=1.0.0",
+    "requests>=2.31.0",
 ]
 
-[project.scripts]
-server = "server:app"
-
-[build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
+[project.urls]
+Homepage = "https://huggingface.co/spaces/USERNAME/life-decision-openenv"
+Repository = "https://huggingface.co/spaces/USERNAME/life-decision-openenv"
